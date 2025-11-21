@@ -8,38 +8,40 @@
     size: A4;
     margin: 1cm;
   }
-  
+
   body {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
-  
+
   /* Hide screen elements */
   .print\:hidden {
     display: none !important;
   }
-  
+
   /* Show print elements */
   .print\:block {
     display: block !important;
   }
-  
+
   /* Table styles */
   table {
     page-break-inside: auto;
   }
-  
+
   tr {
     page-break-inside: avoid;
     page-break-after: auto;
   }
-  
+
   thead {
     display: table-header-group;
   }
-  
+
   /* Prevent breaks */
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     page-break-after: avoid;
   }
 }
