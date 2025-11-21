@@ -112,28 +112,41 @@ export default function App() {
 
   // --- Data Processing ---
 
-  // 0. Pre-calculate available start times per day to determine standard event durations
-  const dailyStartTimes = useMemo(() => {
-    const map = new Map<string, number[]>();
+  // 0. Pre-calculate available start times per day AND stage to determine standard event durations
+  const dailyStageStartTimes = useMemo(() => {
+    const map = new Map<string, Map<string, number[]>>();
     DAYS.forEach((day) => {
-      const times = new Set(
+      const stageMap = new Map<string, number[]>();
+      
+      // Agrupar por escenario
+      const stages = new Set(
         RAW_DATA.schedule
           .filter((e) => e.day === day)
+          .map((e) => e.stage)
+      );
+      
+      stages.forEach((stage) => {
+        const times = RAW_DATA.schedule
+          .filter((e) => e.day === day && e.stage === stage)
           .map((e) => timeToMinutes(e.time))
-      );
-      map.set(
-        day,
-        Array.from(times).sort((a, b) => a - b)
-      );
+          .sort((a, b) => a - b);
+        stageMap.set(stage, times);
+      });
+      
+      map.set(day, stageMap);
     });
     return map;
   }, []);
 
-  const getStandardDuration = (day: string, time: string) => {
-    const times = dailyStartTimes.get(day) || [];
+  const getStandardDuration = (day: string, time: string, stage: string) => {
+    const stageMap = dailyStageStartTimes.get(day);
+    if (!stageMap) return 45;
+    
+    const times = stageMap.get(stage) || [];
     const start = timeToMinutes(time);
     const idx = times.indexOf(start);
-    // If there is a next block, duration is difference. Otherwise default to 45 mins.
+    
+    // If there is a next block in the SAME stage, duration is difference. Otherwise default to 45 mins.
     if (idx !== -1 && idx < times.length - 1) {
       return times[idx + 1] - start;
     }
@@ -200,7 +213,7 @@ export default function App() {
         // Calculate duration based on custom times OR standard schedule flow
         const duration = item.isCustom
           ? timeToMinutes(item.endTime) - startMin
-          : getStandardDuration(item.day, item.time);
+          : getStandardDuration(item.day, item.time, item.stage);
 
         return {
           ...item,
@@ -234,7 +247,7 @@ export default function App() {
         if (myScheduleIds.has(e.id)) return false; // Already added
 
         const eStart = timeToMinutes(e.time);
-        const eDuration = getStandardDuration(e.day, e.time);
+        const eDuration = getStandardDuration(e.day, e.time, e.stage);
         const eEnd = eStart + eDuration;
 
         // Criteria: Event must start >= Gap Start AND Event must end <= Gap End
@@ -271,7 +284,7 @@ export default function App() {
     }
 
     return finalTimeline;
-  }, [myScheduleIds, customEvents, selectedDay, dailyStartTimes]);
+  }, [myScheduleIds, customEvents, selectedDay, dailyStageStartTimes]);
 
   return (
     <div className="flex h-screen bg-gray-50 overflow-hidden font-sans print:h-auto print:overflow-visible print:bg-white">
