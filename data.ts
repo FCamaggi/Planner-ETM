@@ -979,7 +979,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "10:00",
       "stage": "Escenario Impacto",
-      "title": "El futuro presente es en madera",
+      "title": "Arauco: el futuro presente es en madera",
       "company": "Arauco",
       "speakers": []
     },
@@ -988,7 +988,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "10:00",
       "stage": "Escenario Conecta",
-      "title": "Mastercard: ¿Hacia dónde va el ecosistema Fintech?",
+      "title": "Mastercard: ¿Hacia dónde va el ecosistema Fintech? Claves para emprendedores y PYMEs",
       "company": "Mastercard",
       "speakers": []
     },
@@ -997,7 +997,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "10:45",
       "stage": "Escenario Impacto",
-      "title": "Crecer al ritmo del cambio: Liderar con armonía en la era de la IA",
+      "title": "Nacho Dean: Crecer al ritmo del cambio: Liderar con armonía en la era de la IA",
       "company": null,
       "speakers": [
         "Nacho Dean"
@@ -1008,7 +1008,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "10:45",
       "stage": "Escenario Conecta",
-      "title": "Segundo Congreso de Mentores de Chile en ETMDAY",
+      "title": "Segundo Congreso de Mentores de Chile en ETMDAY Impulsando ecosistemas, transformando economías",
       "company": null,
       "speakers": []
     },
@@ -1017,7 +1017,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "11:00",
       "stage": "Escenario Talleres",
-      "title": "Emprendedor ¿Se nace o se hace?",
+      "title": "Ignacio Idalsoaga: Emprendedor ¿Se nace o se hace",
       "company": null,
       "speakers": [
         "Ignacio Idalsoaga"
@@ -1028,7 +1028,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "11:00",
       "stage": "Escenario Paneles y Entrevistas",
-      "title": "Panel: IA y Talento Humano",
+      "title": "Panel: IA y Talento Humano: Potenciando el Futuro Laboral. Barbarita Lara, Florencia Álamos, Víctor León y Cristián Ludwig. Modera: Guillermo Carey",
       "company": null,
       "speakers": [
         "Barbarita Lara",
@@ -1043,7 +1043,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "11:30",
       "stage": "Escenario Impacto",
-      "title": "Más allá de las medallas: conectando con el propósito",
+      "title": "Fernando González y Luciana Aymar: Más allá de las medallas: conectando con el propósito",
       "company": null,
       "speakers": [
         "Fernando González",
@@ -1055,7 +1055,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "12:00",
       "stage": "Escenario Talleres",
-      "title": "Cómo liderar equipos felices",
+      "title": "Teresita Morán: Cómo liderar equipos felices",
       "company": null,
       "speakers": [
         "Teresita Morán"
@@ -1066,7 +1066,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "12:00",
       "stage": "Escenario Paneles y Entrevistas",
-      "title": "Panel: Senior Power: Innovación con Trayectoria",
+      "title": "Panel: Senior Power: Innovación con Trayectoria Ximena Abogabir, Tomás Zavala, Carlos Román y Michelle Schnitzer. Modera: Margot Kahl",
       "company": null,
       "speakers": [
         "Ximena Abogabir",
@@ -1081,7 +1081,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "12:15",
       "stage": "Escenario Impacto",
-      "title": "EMPRENDE TU CORAZÓN: El viaje de la rehabilitación y el emprendimiento",
+      "title": "Teletón: EMPRENDE TU CORAZÓN: El viaje de la rehabilitación y el emprendimiento",
       "company": "Teletón",
       "speakers": []
     },
@@ -1090,7 +1090,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "13:00",
       "stage": "Escenario Talleres",
-      "title": "Plataforma puente para la cooperación entre empresas",
+      "title": "Mindy Wang: A través de su plataforma integral, Chilat sirve de puente para la cooperación entre empresas latinoamericanas y fábricas chinas.",
       "company": "Chilat",
       "speakers": [
         "Mindy Wang"
@@ -1101,7 +1101,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "13:00",
       "stage": "Escenario Paneles y Entrevistas",
-      "title": "Panel: Cuéntame la Firme",
+      "title": "Panel: Cuéntame la Firme. Gustavo Morandé, Dakota Miranda y Diego Tagle. Modera: Roberto Camhi",
       "company": null,
       "speakers": [
         "Gustavo Morandé",
@@ -1115,7 +1115,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "13:15",
       "stage": "Escenario Impacto",
-      "title": "Sábados BUILDER by APTA",
+      "title": "Hub Apta: Sábados BUILDER by APTA",
       "company": "Hub Apta",
       "speakers": []
     },
@@ -1124,27 +1124,16 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "13:15",
       "stage": "Escenario Conecta",
-      "title": "Masterclass de galletas",
+      "title": "Sweets Hamilton: Masterclass de galletas",
       "company": "Sweets Hamilton",
       "speakers": []
-    },
-    {
-      "id": "sat-imp-1400",
-      "day": "Sábado 22",
-      "time": "14:00",
-      "stage": "Escenario Impacto",
-      "title": "31 Minutos: El arte de equivocarse",
-      "company": null,
-      "speakers": [
-        "Matias Iglesis"
-      ]
     },
     {
       "id": "sat-tall-1400",
       "day": "Sábado 22",
       "time": "14:00",
       "stage": "Escenario Talleres",
-      "title": "Creación de contenido para redes sociales",
+      "title": "Felipe Saavedra: Creación de contenido para redes sociales",
       "company": null,
       "speakers": [
         "Felipe Saavedra"
@@ -1155,7 +1144,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "14:00",
       "stage": "Escenario Paneles y Entrevistas",
-      "title": "Panel: Del Campus a la Calle: Emprender para Transformar",
+      "title": "Panel: Del Campus a la Calle: Emprender para Transformar. Juan Carlos de la Llera, Francisco Covarrubias, Rosa Devés, Carlos Díaz y Lucas Palacios. Modera: Joaquín Lavín",
       "company": null,
       "speakers": [
         "Juan Carlos de la Llera",
@@ -1171,7 +1160,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "14:15",
       "stage": "Escenario Conecta",
-      "title": "ColorMACH Experience",
+      "title": "Carlos Zarhi y José Masihy: ColorMACH Experience",
       "company": null,
       "speakers": [
         "Carlos Zarhi",
@@ -1183,18 +1172,16 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "15:00",
       "stage": "Escenario Impacto",
-      "title": "FAIL: historias de Fracasos, Aprendizajes, Innovación y Liderazgo",
-      "company": null,
-      "speakers": [
-        "Isa Vias"
-      ]
+      "title": "CORFO: Entrega de Reconocimientos Innovación de Impacto 2025",
+      "company": "CORFO",
+      "speakers": []
     },
     {
       "id": "sat-tall-1500",
       "day": "Sábado 22",
       "time": "15:00",
       "stage": "Escenario Talleres",
-      "title": "La inteligencia artificial como tu cofundador",
+      "title": "Gustavo Inostroza: La inteligencia artificial como tu cofundador",
       "company": null,
       "speakers": [
         "Gustavo Inostroza"
@@ -1205,7 +1192,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "15:00",
       "stage": "Escenario Paneles y Entrevistas",
-      "title": "Panel: Industrias Creativas: El Poder de Crear",
+      "title": "Panel: Industrias Creativas: El Poder de Crear Tomás Dittborn, Joyce Zylberberg, Rodrigo Baudrand y Rocío Jadue. Modera: Carolina Arredondo",
       "company": null,
       "speakers": [
         "Tomás Dittborn",
@@ -1216,12 +1203,12 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       ]
     },
     {
-      "id": "sat-imp-1515",
+      "id": "sat-con-1515",
       "day": "Sábado 22",
       "time": "15:15",
-      "stage": "Escenario Impacto",
-      "title": "Entrega de Reconocimientos Innovación de Impacto 2025",
-      "company": "CORFO",
+      "stage": "Escenario Conecta",
+      "title": "FACH: Centro Espacial Nacional y su contribución al",
+      "company": "FACH",
       "speakers": []
     },
     {
@@ -1229,10 +1216,10 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "15:45",
       "stage": "Escenario Impacto",
-      "title": "IA, amiga o enemiga",
+      "title": "Isa Vías: FAIL: historias de Fracasos, Aprendizajes, Innovación y Liderazgo",
       "company": null,
       "speakers": [
-        "Chris Bannister"
+        "Isa Vías"
       ]
     },
     {
@@ -1240,8 +1227,8 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "15:45",
       "stage": "Escenario Conecta",
-      "title": "Centro Espacial Nacional y su contribución al desarrollo",
-      "company": "FACH",
+      "title": "Mujeres Emprendedores: Pitch Day \"Premio Mujer Atómica 2025\"",
+      "company": "Mujeres Emprendedores",
       "speakers": []
     },
     {
@@ -1249,7 +1236,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "16:00",
       "stage": "Escenario Talleres",
-      "title": "Modelo de negocios personal",
+      "title": "Tadashi Takaoka: Modelo de negocios personal",
       "company": null,
       "speakers": [
         "Tadashi Takaoka"
@@ -1260,7 +1247,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "16:00",
       "stage": "Escenario Paneles y Entrevistas",
-      "title": "Panel: Influencers y creadores de contenido",
+      "title": "Panel: Influencers y creadores de contenido Luna Marinetti y Dianella Coppo. Modera: Francisco Ackermann",
       "company": null,
       "speakers": [
         "Luna Marinetti",
@@ -1269,30 +1256,32 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       ]
     },
     {
-      "id": "sat-imp-1615",
+      "id": "sat-con-1615",
       "day": "Sábado 22",
       "time": "16:15",
-      "stage": "Escenario Impacto",
-      "title": "Reverse Pitch: Laboratorios naturales del sur de Chile",
-      "company": "Glocal",
+      "stage": "Escenario Conecta",
+      "title": "ABB: Demo Day InnovABB: ABB hacia una transformación sostenible",
+      "company": "ABB",
       "speakers": []
     },
     {
-      "id": "sat-con-1630",
+      "id": "sat-imp-1630",
       "day": "Sábado 22",
       "time": "16:30",
-      "stage": "Escenario Conecta",
-      "title": "Pitch Day \"Premio Mujer Atómica 2025\"",
-      "company": "Mujeres Emprendedoras",
-      "speakers": []
+      "stage": "Escenario Impacto",
+      "title": "Chris Bannister: IA, amiga o enemiga",
+      "company": null,
+      "speakers": [
+        "Chris Bannister"
+      ]
     },
     {
       "id": "sat-con-1645",
       "day": "Sábado 22",
       "time": "16:45",
       "stage": "Escenario Conecta",
-      "title": "Demo Day InnovABB: ABB hacia una transformación sostenible",
-      "company": "ABB",
+      "title": "Red Bull: Basement",
+      "company": "Red Bull",
       "speakers": []
     },
     {
@@ -1300,7 +1289,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "17:00",
       "stage": "Escenario Talleres",
-      "title": "Despegue: Primer Vuelo con Drones",
+      "title": "Diego Mendoza: Despegue: Primer Vuelo con Drones",
       "company": null,
       "speakers": [
         "Diego Mendoza"
@@ -1311,7 +1300,7 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       "day": "Sábado 22",
       "time": "17:00",
       "stage": "Escenario Paneles y Entrevistas",
-      "title": "Entrevista: Carolina de Moras",
+      "title": "Entrevista: Carolina de Moras por François Pouzet",
       "company": null,
       "speakers": [
         "Carolina de Moras",
@@ -1319,53 +1308,44 @@ export const RAW_DATA: { meta: any; schedule: EtMEvent[] } = {
       ]
     },
     {
-      "id": "sat-con-1715",
+      "id": "sat-imp-1715",
       "day": "Sábado 22",
       "time": "17:15",
-      "stage": "Escenario Conecta",
-      "title": "Basement",
-      "company": "Red Bull",
-      "speakers": []
-    },
-    {
-      "id": "sat-imp-1745",
-      "day": "Sábado 22",
-      "time": "17:45",
       "stage": "Escenario Impacto",
-      "title": "Disciplina, Resiliencia, Estrategia y trabajo en equipo",
-      "company": null,
-      "speakers": [
-        "Sammis Reyes"
-      ]
+      "title": "Glocal Reverse Pitch: Laboratorios naturales del sur de Chile buscan atraer innovadores científicos y tecnológicos",
+      "company": "Glocal",
+      "speakers": []
     },
     {
       "id": "sat-con-1745",
       "day": "Sábado 22",
       "time": "17:45",
       "stage": "Escenario Conecta",
-      "title": "Proyecto de Drones",
-      "company": "Carabineros de Chile",
+      "title": "Carabineros: por confirmar",
+      "company": "Carabineros",
       "speakers": []
     },
     {
-      "id": "sat-imp-1800",
+      "id": "sat-con-1745b",
       "day": "Sábado 22",
-      "time": "18:00",
-      "stage": "Escenario Impacto",
-      "title": "Buscando planetas gemelos a la tierra con NASA",
+      "time": "17:45",
+      "stage": "Escenario Conecta",
+      "title": "Eduardo Bendek: Buscando planetas gemelos a la tierra con los telescopios espaciales de NASA",
       "company": null,
       "speakers": [
         "Eduardo Bendek"
       ]
     },
     {
-      "id": "sat-con-1830",
+      "id": "sat-imp-1800",
       "day": "Sábado 22",
-      "time": "18:30",
-      "stage": "Escenario Conecta",
-      "title": "¿Cómo las empresas se conectan productivamente de forma exitosa?",
-      "company": "Sercotec",
-      "speakers": []
+      "time": "18:00",
+      "stage": "Escenario Impacto",
+      "title": "Sammis Reyes: Disciplina, Resiliencia, Estrategia y trabajo en equipo: Lo que la NFL me dejó para el Desarrollo de Negocios",
+      "company": null,
+      "speakers": [
+        "Sammis Reyes"
+      ]
     },
     {
       "id": "sat-imp-1915",

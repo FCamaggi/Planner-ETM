@@ -1,17 +1,28 @@
 
 import React, { useState, useMemo } from 'react';
-import { Calendar, Search, Plus, Sparkles, Trash2, AlertTriangle, Clock, ExternalLink, Coffee, ArrowDown, ArrowRight, Lightbulb, Printer, Pencil } from 'lucide-react';
+import { Calendar, Search, Plus, Sparkles, Trash2, AlertTriangle, Clock, ExternalLink, Coffee, ArrowDown, ArrowRight, Lightbulb, Printer, Pencil, Filter } from 'lucide-react';
 import { RAW_DATA } from './data';
 import { DAYS, CustomEvent } from './types';
 import { EventCard } from './components/EventCard';
 import { CustomEventModal, CustomEventData } from './components/CustomEventModal';
 import { timeToMinutes, checkOverlap, generateEtmLink, minutesToTime } from './utils/helpers';
 
+const STAGES = [
+  "Todos",
+  "Escenario Impacto",
+  "Escenario Conecta",
+  "Escenario Paneles y Entrevistas",
+  "Escenario Talleres"
+];
+
 export default function App() {
   const [selectedDay, setSelectedDay] = useState(DAYS[0]);
   const [searchQuery, setSearchQuery] = useState('');
   const [myScheduleIds, setMyScheduleIds] = useState<Set<string>>(new Set());
   const [customEvents, setCustomEvents] = useState<CustomEvent[]>([]);
+  const [selectedStage, setSelectedStage] = useState("Todos");
+  const [startTimeFilter, setStartTimeFilter] = useState("");
+  const [endTimeFilter, setEndTimeFilter] = useState("");
   
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,6 +112,22 @@ export default function App() {
   const availableEvents = useMemo(() => {
     let events = RAW_DATA.schedule.filter(e => e.day === selectedDay);
     
+    // Filter by stage
+    if (selectedStage !== "Todos") {
+      events = events.filter(e => e.stage === selectedStage);
+    }
+    
+    // Filter by time range
+    if (startTimeFilter) {
+      const startMin = timeToMinutes(startTimeFilter);
+      events = events.filter(e => timeToMinutes(e.time) >= startMin);
+    }
+    
+    if (endTimeFilter) {
+      const endMin = timeToMinutes(endTimeFilter);
+      events = events.filter(e => timeToMinutes(e.time) <= endMin);
+    }
+    
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       events = events.filter(e => 
@@ -112,7 +139,7 @@ export default function App() {
     }
     
     return events.sort((a, b) => timeToMinutes(a.time) - timeToMinutes(b.time));
-  }, [selectedDay, searchQuery]);
+  }, [selectedDay, searchQuery, selectedStage, startTimeFilter, endTimeFilter]);
 
   // 2. My Agenda (Main View)
   const agendaItems = useMemo(() => {
@@ -246,7 +273,7 @@ export default function App() {
           </div>
 
           {/* Search */}
-          <div className="relative">
+          <div className="relative mb-3">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
             <input
               type="text"
@@ -255,6 +282,66 @@ export default function App() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-etm-500 focus:border-etm-500 outline-none transition-all"
             />
+          </div>
+
+          {/* Filters */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-xs font-semibold text-gray-500 uppercase">
+              <Filter size={14} />
+              Filtros
+            </div>
+            
+            {/* Stage Filter */}
+            <div>
+              <label className="block text-xs font-medium text-gray-600 mb-1">Escenario</label>
+              <select
+                value={selectedStage}
+                onChange={(e) => setSelectedStage(e.target.value)}
+                className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-etm-500 focus:border-etm-500 outline-none transition-all"
+              >
+                {STAGES.map((stage) => (
+                  <option key={stage} value={stage}>
+                    {stage}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Time Range Filter */}
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Desde</label>
+                <input
+                  type="time"
+                  value={startTimeFilter}
+                  onChange={(e) => setStartTimeFilter(e.target.value)}
+                  className="w-full px-2 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-etm-500 focus:border-etm-500 outline-none transition-all"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">Hasta</label>
+                <input
+                  type="time"
+                  value={endTimeFilter}
+                  onChange={(e) => setEndTimeFilter(e.target.value)}
+                  className="w-full px-2 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-etm-500 focus:border-etm-500 outline-none transition-all"
+                />
+              </div>
+            </div>
+
+            {/* Clear Filters */}
+            {(selectedStage !== "Todos" || startTimeFilter || endTimeFilter) && (
+              <button
+                onClick={() => {
+                  setSelectedStage("Todos");
+                  setStartTimeFilter("");
+                  setEndTimeFilter("");
+                }}
+                className="w-full text-xs text-etm-600 hover:text-etm-700 font-medium"
+              >
+                Limpiar filtros
+              </button>
+            )}
           </div>
         </div>
 
@@ -313,8 +400,60 @@ export default function App() {
            <h2 className="text-xl text-etm-600">{selectedDay}</h2>
         </div>
 
+        {/* Print Table View */}
+        <div className="hidden print:block p-6">
+          {agendaItems.length === 0 ? (
+            <p className="text-center text-gray-500">No hay eventos en tu agenda para este día.</p>
+          ) : (
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-gray-300">
+                  <th className="text-left py-2 px-3 font-bold text-sm">Hora</th>
+                  <th className="text-left py-2 px-3 font-bold text-sm">Escenario</th>
+                  <th className="text-left py-2 px-3 font-bold text-sm">Título</th>
+                  <th className="text-left py-2 px-3 font-bold text-sm">Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                {agendaItems
+                  .filter(item => !item.isGap)
+                  .map((item) => {
+                    const startStr = minutesToTime(item.startMin);
+                    const endStr = minutesToTime(item.endMin);
+                    const link = item.isCustom ? '-' : generateEtmLink(item.stage, item.title);
+                    
+                    return (
+                      <tr key={item.id} className="border-b border-gray-200">
+                        <td className="py-2 px-3 text-sm align-top whitespace-nowrap">
+                          {startStr} - {endStr}
+                        </td>
+                        <td className="py-2 px-3 text-sm align-top">
+                          {item.isCustom ? 'Personal' : item.stage}
+                        </td>
+                        <td className="py-2 px-3 text-sm align-top">
+                          <div className="font-medium">{item.title}</div>
+                          {item.company && item.company !== 'Personal' && (
+                            <div className="text-xs text-gray-600 mt-0.5">{item.company}</div>
+                          )}
+                          {item.speakers && item.speakers.length > 0 && (
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              {item.speakers.join(', ')}
+                            </div>
+                          )}
+                        </td>
+                        <td className="py-2 px-3 text-xs align-top break-all">
+                          {link}
+                        </td>
+                      </tr>
+                    );
+                  })}
+              </tbody>
+            </table>
+          )}
+        </div>
+
         {/* Agenda Content */}
-        <div className="flex-1 overflow-y-auto p-6 print:overflow-visible print:h-auto print:p-0 print:px-6">
+        <div className="flex-1 overflow-y-auto p-6 print:hidden print:overflow-visible print:h-auto print:p-0 print:px-6">
           
           {agendaItems.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-gray-400 opacity-60 print:hidden">
